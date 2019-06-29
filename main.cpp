@@ -14,6 +14,7 @@ int main()
     std::ifstream file_stream("desktop_test.png", std::ios::in | std::ios::binary);
     file_stream.seekg(0, std::ios_base::end);
     int file_size = file_stream.tellg();
+    file_stream.seekg(0, std::ios_base::beg);
 
     std::shared_ptr<char> buffer(new char[file_size]);
     file_stream.read(buffer.get(), file_size);
